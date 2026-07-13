@@ -21,10 +21,6 @@ type RequestOptions = {
   token?: string | null
 }
 
-type RuntimeAppConfig = {
-  apiBaseUrl?: string
-}
-
 class ApiError extends Error {
   readonly status: number
 
