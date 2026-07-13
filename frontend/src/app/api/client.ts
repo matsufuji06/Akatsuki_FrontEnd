@@ -8,11 +8,11 @@ import type {
   StatsData,
 } from '../types'
 
-const API_BASE_URL =
-  getRuntimeApiBaseUrl() ??
-  (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, '') ??
-  (import.meta.env.PROD ? '/api/v1' : 'http://127.0.0.1:8000/api/v1')
-
+// const API_BASE_URL =
+//   getRuntimeApiBaseUrl() ??
+//   (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, '') ??
+//   (import.meta.env.PROD ? '/api/v1' : 'http://127.0.0.1:8000/api/v1')
+const API_BASE_URL = 'http://akatsuki-prod.eba-gpprptdd.ap-northeast-1.elasticbeanstalk.com/api/v1'
 const AUTH_TOKEN_STORAGE_KEY = 'akatsukiAuthToken'
 const AUTH_USER_STORAGE_KEY = 'akatsukiAuthUser'
 
