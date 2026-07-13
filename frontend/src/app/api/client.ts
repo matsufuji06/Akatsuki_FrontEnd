@@ -25,21 +25,6 @@ type RuntimeAppConfig = {
   apiBaseUrl?: string
 }
 
-function getRuntimeApiBaseUrl(): string | undefined {
-  if (typeof window === 'undefined') {
-    return undefined
-  }
-
-  const config = (window as Window & { __APP_CONFIG__?: RuntimeAppConfig }).__APP_CONFIG__
-
-  if (typeof config?.apiBaseUrl !== 'string') {
-    return undefined
-  }
-
-  const value = config.apiBaseUrl.trim()
-  return value.length > 0 ? value.replace(/\/$/, '') : undefined
-}
-
 class ApiError extends Error {
   readonly status: number
 
